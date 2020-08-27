@@ -18,7 +18,7 @@ public class Example10_5 {
         String str ;
         System.out.print("ENTER NAME");
         str = in.nextLine();
-        //  DO THIS LOOP TIL U GOT THIS CONDITION WHEN IT TYPE STOP DETERMINE PROGGY BUT ...
+        
         while(!str.trim().equals("stop")){
             writer.write(str + "\n");
             System.out.print("ENTER II NAME");
@@ -47,9 +47,6 @@ public class Example10_5 {
         reader.close();
     }
 
-    // ONE MORE THING THE TEXT CAN BE HASHED FOR SECUREUTY WHITH 2 KEYS PUBLIC PRIVATE
-    //FOR THIS NEED A SEPERTE CLASS
-    // I LIKE U TO UNDRESTAND THIS SUBJECT OF JAVA FILE INPUT OUTPUT IO ITS USEFULL
-    //-
+   
 
 }
