@@ -3,6 +3,8 @@ package IO;
 public class Example10_14 {
     public static void main(String [ ] args)
     {
+         String fileName = "seqfile.dat";
+        // writeData(fileName);
 
     }
 
