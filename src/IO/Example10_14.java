@@ -15,6 +15,7 @@ public class Example10_14 {
     }
     
     //WRITE DATA METHOD WRITES INPUT NOT LINE BY LINE BUT APPENDED . A BUG 
+    //System.lineseperator() -> STATIC METHOD BY DEFUALT OR "\r\n" SAME  
 
     public static void writeData(String outputFile) throws FileNotFoundException {
         PrintWriter outFile = new PrintWriter(outputFile);
