@@ -29,7 +29,7 @@ public class Example10_14 {
             stNo = console.nextInt();
             System.out.println("ENTER GRADE NU");
             grade = console.nextInt();
-            outFile.write(name+ "");
+            outFile.write(name+ "");//PROGRAM CRASHED HIER AND NEXT SECOND LINE
             outFile.write(stNo);
             outFile.write(grade + "");
             System.out.print("\nENTER A NAME\n");
