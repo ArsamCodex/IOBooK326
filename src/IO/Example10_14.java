@@ -15,6 +15,7 @@ public class Example10_14 {
        printData(fileName);
 
 
+                // NOW NEXT THING MAKE THIS IN SEPERATED CLASSES OOP
     }
 
     public static void writeData(String outputFile) throws FileNotFoundException {
