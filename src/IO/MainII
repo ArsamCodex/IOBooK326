@@ -1,0 +1,98 @@
+package objectInputStream;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class MainI {
+    static Scanner console = new Scanner(System.in);
+    final static int SIZE = 2;
+    private static StudentClass[] ob = new StudentClass[SIZE];
+
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        while (true) {
+            switch (menu()) {
+                case 1:
+                    enter();
+                    break;
+             case 2:
+                 report();
+                 break;
+
+            }
+        }
+
+
+    }
+
+
+    static int menu() {
+        int c;
+        System.out.println("1  ENTER DATA IN");
+        c = console.nextInt();
+        return c;
+    }
+
+
+    static void enter() {
+        String stName;
+        int stId;
+        int stUnit;
+        float stAve;
+        for (int i = 0; i < SIZE; i++) {
+            ob[i] = new StudentClass();
+            System.out.println("EMTER N AME ");
+            stName = console.next();
+            ob[i].setName(stName);
+            System.out.println("ENTER ID");
+            stId = console.nextInt();
+            ob[i].setId(stId);
+            System.out.println("ENTER AVE");
+            stAve = console.nextFloat();
+            System.out.println("ENTER UNIT");
+            stUnit = console.nextInt();
+            ob[i].setUnit(stUnit);
+
+        }
+    }
+
+    static void report() throws IOException, ClassNotFoundException {
+        FileInputStream f1 = new FileInputStream("ob.txt");
+        ObjectInputStream inFile = new ObjectInputStream(f1);
+        StudentClass obI = new StudentClass();
+
+        for (int i = 0; i < SIZE; i++) {
+            int c;
+            obI = (StudentClass) inFile.readObject();
+            System.out.println("NAME " + obI.getName());
+            System.out.println("ID" + obI.getId());
+            System.out.println("AVE" + obI.getAve());
+            System.out.println("UNIT" + obI.getUnit());
+        }
+    }
+
+    static void save() throws IOException {
+        FileOutputStream f= new FileOutputStream("ob.txt");
+        ObjectOutputStream outFile = new ObjectOutputStream(f);
+        for(int i = 0 ; i <SIZE ; i++){
+            outFile.writeObject(ob[i]);
+            outFile.flush();
+        }
+        outFile.close();
+
+    }
+    static void search(){
+        int num ;
+        System.out.println("ENTER STUDENT NO TO SEARCH");
+        num = console.nextInt();
+        int i ;
+        for(i = 0 ; i<SIZE ; i++){
+            if(num == ob[i].getId())
+                break;
+        }
+        if(i<SIZE)
+            System.out.println(" STUDENT EXIT");
+        else
+            System.out.println("STUDENT DOSENT EXISR");
+    }
+}
